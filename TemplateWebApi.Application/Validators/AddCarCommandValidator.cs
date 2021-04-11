@@ -1,0 +1,20 @@
+﻿using FluentValidation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TemplateWebApi.Application.Commands;
+
+namespace TemplateWebApi.Application.Validators
+{
+    public class AddCarCommandValidator : AbstractValidator<AddCarCommand>
+    {
+        public AddCarCommandValidator()
+        {
+            RuleFor(v => v.Name)
+                .MaximumLength(200)
+                .NotEmpty();
+        }
+    }
+}
